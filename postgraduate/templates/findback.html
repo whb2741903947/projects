@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/sign_style.css">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+</head>
+
+<style>
+    input::-webkit-input-placeholder{
+        color:rgb(129, 101, 207);
+        /* 报告中描述这个功能 */
+        font-size:19px;
+    }
+    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color:rgb(129, 101, 207);
+        font-size:19px;
+    }
+    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color:rgb(129, 101, 207);
+        font-size:19px;
+    }
+    input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+        color:rgb(129, 101, 207);
+        font-size:19px;
+    }
+</style>
+
+<style type="text/css">
+    a:link,a:visited{
+     text-decoration:none;  /*超链接无下划线*/
+     color:rgb(129, 101, 207);
+    }
+</style>
+
+<body>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <!-- <form method="post" enctype="multipart/form-data"> -->
+        <div id='app' class="container">
+            <img src="../static/css/webp.png" />
+            <div class="panel">
+                <div class="content login">
+                    <div class="switch">
+                        <span :class='{"active": active === "login"}' @click='go("login")'>找回密码</span>
+                    </div>
+                    <div class='form' id="fromLogin">
+
+                        <template v-if='active === "login"'>
+                            <div class="input"><input type="password" name="findback" id="findback" placeholder="密保"/></div>
+                        </template>
+                        <p style="color:red;font-size:19px">{{ error_name }}</p>
+                        <p style="color:red;font-size:19px">{{ error_pass }}</p>
+                        <a href="/login">登录</a>
+
+                        <button type="submit">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            active: 'login'
+        },
+        methods: {
+            go (type) {
+                this.active = type
+            }
+        },
+        beforeMount () {
+            
+        }
+    })
+    </script>
+    
+    </html>

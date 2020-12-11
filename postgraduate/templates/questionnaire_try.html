@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/question.css">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+</head>
+
+
+<body>
+    <body>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div id='app' class="container">
+                        <div class='form' id="fromLogin">
+        
+                            <template v-if='active === "login"'>
+
+                                <div class="input"><input type="text" name="Nickname" id="Nickname" /><label for="Password">昵称(最多8位字符)</label></div>
+                            
+
+                                <input type="radio" value="male" name="sex" checked/>男
+                                <input type="radio" value="female" name="sex"/>女<br>
+                            </br>
+                                <input type="radio" value="graduate_yes" name="grad" checked/>考研
+                                <input type="radio" value="graduate_no" name="grad"/>不考研<br>
+                            
+                            </template>
+
+                            <br>
+                               <p style="color:rgb(129, 101, 207);font-size:19px">鼓励自己的话:</p><textarea name="content_one" cols="100" rows="5" style="background-color:rgb(158, 230, 206);font-size:18px;color:rgb(238, 62, 209);"></textarea>
+                            <br>
+
+                            <br>
+                               <p style="color:rgb(129, 101, 207);font-size:19px">考研规划:</p><textarea name="content_two" cols="100" rows="5" style="background-color:rgb(158, 230, 206);font-size:18px;color:rgb(248, 163, 66);"></textarea>
+                            <br>
+                            
+                            <br>
+                               <p style="color:rgb(129, 101, 207);font-size:19px">考研目标:</p><textarea name="content_three" cols="100" rows="5" style="background-color:rgb(158, 230, 206);font-size:18px;color:rgb(104, 147, 240);"></textarea>
+                            <br>
+                            
+                            <input type="reset" value="清空" />
+                            <button type="submit">提交</button>
+                        </div>
+            </div>
+        </form>
+</body>
+
+<script>
+var vue = new Vue({
+    el: '#app',
+    data: {
+        active: 'login'
+    },
+    methods: {
+        go (type) {
+            this.active = type
+        }
+    },
+    beforeMount () {
+        
+    }
+})
+</script>
+
+</html>
